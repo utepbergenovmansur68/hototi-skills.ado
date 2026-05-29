@@ -1,0 +1,95 @@
+<!-- theory.html -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Теория — Hotori Skills</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theory.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="floating-symbols" id="floating-symbols"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">📐</span>
+                <span class="logo-text">Hotori Skills</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Басты бет</a></li>
+                <li><a href="theory.html" class="nav-link active">Теория</a></li>
+                <li><a href="practice.html" class="nav-link">Тәжірибе</a></li>
+                <li><a href="materials.html" class="nav-link">Материалдар</a></li>
+                <li><a href="tests.html" class="nav-link">Тесттер</a></li>
+                <li><a href="progress.html" class="nav-link">Прогресс</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Theme">🌙</button>
+                <button class="sound-toggle" id="sound-toggle" aria-label="Sound">🔊</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Theory Header -->
+    <section class="theory-header">
+        <h1 class="page-title">📚 Теориялық материалдар</h1>
+        <p class="page-subtitle">20 тақырып бойынша толық конспект, мысалдар және визуализациялар</p>
+        <div class="theory-progress-bar">
+            <div class="progress-fill" id="theory-progress-fill"></div>
+        </div>
+        <p class="progress-text">Оқылған: <span id="theory-read-count">0</span> / 20 тақырып</p>
+    </section>
+
+    <!-- Theory Sidebar Navigation -->
+    <div class="theory-layout">
+        <aside class="theory-sidebar" id="theory-sidebar">
+            <h3>Тақырыптар</h3>
+            <ul id="theory-nav-list">
+                <!-- JS арқылы толтырылады -->
+            </ul>
+        </aside>
+
+        <main class="theory-content" id="theory-content">
+            <!-- JS арқылы толтырылады -->
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">📐 Hotori Skills</span>
+                <p>5-сынып оқушыларына арналған интерактивті білім беру платформасы</p>
+            </div>
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <a href="index.html">Басты бет</a>
+                <a href="theory.html">Теория</a>
+                <a href="practice.html">Тәжірибе</a>
+                <a href="tests.html">Тесттер</a>
+            </div>
+            <div class="footer-info">
+                <h4>© 2025 Hotori Skills</h4>
+                <p>Барлық құқықтар қорғалған.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scroll-top">↑</button>
+    <div id="notification-container"></div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/theory.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!-- practice.html -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика — Hotori Skills</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/practice.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="floating-symbols" id="floating-symbols"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">📐</span>
+                <span class="logo-text">Hotori Skills</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Басты бет</a></li>
+                <li><a href="theory.html" class="nav-link">Теория</a></li>
+                <li><a href="practice.html" class="nav-link active">Тәжірибе</a></li>
+                <li><a href="materials.html" class="nav-link">Материалдар</a></li>
+                <li><a href="tests.html" class="nav-link">Тесттер</a></li>
+                <li><a href="progress.html" class="nav-link">Прогресс</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle">🌙</button>
+                <button class="sound-toggle" id="sound-toggle">🔊</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="practice-header">
+        <h1 class="page-title">✏️ Практикалық есептер</h1>
+        <p class="page-subtitle">Тақырыпты таңдап, есептерді шығар! Әр дұрыс жауап — 10 XP</p>
+        <div class="practice-stats">
+            <div class="mini-stat">
+                <span class="mini-stat-icon">✅</span>
+                <span>Дұрыс: <strong id="correct-count">0</strong></span>
+            </div>
+            <div class="mini-stat">
+                <span class="mini-stat-icon">❌</span>
+                <span>Қате: <strong id="wrong-count">0</strong></span>
+            </div>
+            <div class="mini-stat">
+                <span class="mini-stat-icon">⭐</span>
+                <span>XP: <strong id="xp-count">0</strong></span>
+            </div>
+            <div class="mini-stat">
+                <span class="mini-stat-icon">🔥</span>
+                <span>Streak: <strong id="streak-count">0</strong></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic Selector -->
+    <section class="topic-selector">
+        <h2>Тақырыпты таңда:</h2>
+        <div class="topic-chips" id="topic-chips">
+            <!-- JS арқылы -->
+        </div>
+    </section>
+
+    <!-- Practice Area -->
+    <section class="practice-area" id="practice-area">
+        <div class="exercise-container" id="exercise-container">
+            <div class="exercise-placeholder">
+                <span class="placeholder-icon">🎯</span>
+                <h3>Тақырыпты таңдап, есептерді баста!</h3>
+                <p>Жоғарыдағы тақырыптардан бірін таңда</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">📐 Hotori Skills</span>
+                <p>5-сынып оқушыларына арналған интерактивті білім беру платформасы</p>
+            </div>
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <a href="index.html">Басты бет</a>
+                <a href="theory.html">Теория</a>
+                <a href="practice.html">Тәжірибе</a>
+                <a href="tests.html">Тесттер</a>
+            </div>
+            <div class="footer-info">
+                <h4>© 2025 Hotori Skills</h4>
+                <p>Барлық құқықтар қорғалған.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scroll-top">↑</button>
+    <div id="notification-container"></div>
+    <div id="achievement-popup" class="achievement-popup hidden">
+        <div class="achievement-content">
+            <div class="achievement-icon">🏆</div>
+            <h3 id="achievement-title">Жетістік!</h3>
+            <p id="achievement-desc">Алғашқы қадам!</p>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/practice.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

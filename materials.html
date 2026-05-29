@@ -1,0 +1,190 @@
+<!-- materials.html -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Материалдар — Hotori Skills</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="floating-symbols" id="floating-symbols"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">📐</span>
+                <span class="logo-text">Hotori Skills</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Басты бет</a></li>
+                <li><a href="theory.html" class="nav-link">Теория</a></li>
+                <li><a href="practice.html" class="nav-link">Тәжірибе</a></li>
+                <li><a href="materials.html" class="nav-link active">Материалдар</a></li>
+                <li><a href="tests.html" class="nav-link">Тесттер</a></li>
+                <li><a href="progress.html" class="nav-link">Прогресс</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle">🌙</button>
+                <button class="sound-toggle" id="sound-toggle">🔊</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="materials-header">
+        <h1 class="page-title">📋 Материалдар анықтамалығы</h1>
+        <p class="page-subtitle">Формулалар, терминдер, анықтамалар, қасиеттер — бәрі бір жерде</p>
+        <div class="search-container">
+            <input type="text" id="material-search" placeholder="Іздеу: формула, термин, анықтама..." class="search-input">
+            <button class="search-btn">🔍</button>
+        </div>
+        <div class="filter-chips" id="filter-chips">
+            <button class="filter-chip active" data-filter="all">Барлығы</button>
+            <button class="filter-chip" data-filter="formula">📐 Формулалар</button>
+            <button class="filter-chip" data-filter="term">📖 Терминдер</button>
+            <button class="filter-chip" data-filter="definition">📝 Анықтамалар</button>
+            <button class="filter-chip" data-filter="property">⚡ Қасиеттер</button>
+        </div>
+    </section>
+
+    <main class="materials-grid" id="materials-grid">
+        <!-- JS арқылы толтырылады -->
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">📐 Hotori Skills</span>
+                <p>5-сынып оқушыларына арналған интерактивті білім беру платформасы</p>
+            </div>
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <a href="index.html">Басты бет</a>
+                <a href="theory.html">Теория</a>
+                <a href="practice.html">Тәжірибе</a>
+                <a href="tests.html">Тесттер</a>
+            </div>
+            <div class="footer-info">
+                <h4>© 2025 Hotori Skills</h4>
+                <p>Барлық құқықтар қорғалған.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scroll-top">↑</button>
+    <div id="notification-container"></div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Materials page specific script
+        const materialsData = [
+            { type: "formula", title: "Теңдеудің жалпы түрі", content: "ax + b = c, мұндағы a, b, c — белгілі сандар, x — айнымалы" },
+            { type: "formula", title: "Қосу теңдеуі", content: "x + a = b → x = b - a" },
+            { type: "formula", title: "Азайту теңдеуі", content: "x - a = b → x = b + a" },
+            { type: "formula", title: "Көбейту теңдеуі", content: "ax = b → x = b ÷ a" },
+            { type: "formula", title: "Бөлу теңдеуі", content: "x ÷ a = b → x = b × a" },
+            { type: "formula", title: "Теңсіздіктің жалпы түрі", content: "ax + b > c немесе ax + b < c" },
+            { type: "formula", title: "Қос теңсіздік", content: "a < x < b — x саны a мен b аралығында" },
+            { type: "formula", title: "Аралық ұзындығы", content: "b - a, мұндағы a < x < b" },
+            { type: "term", title: "Айнымалы", content: "Мәні белгісіз шама, әріппен белгіленеді (x, y, z)" },
+            { type: "term", title: "Теңдеу", content: "Айнымалысы бар теңдік" },
+            { type: "term", title: "Теңсіздік", content: "Сандардың немесе өрнектердің салыстырылуы (<, >, ≤, ≥)" },
+            { type: "term", title: "Координаталық сәуле", content: "Басы, бағыты және бірлік кесіндісі бар түзу" },
+            { type: "term", title: "Сан аралығы", content: "Координаталық сәуледегі нүктелер жиыны" },
+            { type: "term", title: "Теңдеу түбірі", content: "Теңдеуді дұрыс теңдікке айналдыратын айнымалы мәні" },
+            { type: "term", title: "Модуль", content: "Санның таңбасыз мәні, |a| деп белгіленеді" },
+            { type: "term", title: "Өрнек", content: "Сандар мен амалдардан құралған жазба" },
+            { type: "definition", title: "Теңдеу шешу", content: "Теңдеудің барлық түбірлерін табу немесе түбірі жоқ екенін көрсету" },
+            { type: "definition", title: "Теңдік", content: "Екі өрнектің тең екенін көрсететін жазба (= белгісімен)" },
+            { type: "definition", title: "Қос теңсіздік", content: "Екі теңсіздікті біріктіретін өрнек: a < x < b" },
+            { type: "definition", title: "Координата", content: "Координаталық сәуледегі нүктенің сандық мәні" },
+            { type: "property", title: "Теңдеу қасиеті 1", content: "Теңдіктің екі жағына бірдей сан қосуға болады" },
+            { type: "property", title: "Теңдеу қасиеті 2", content: "Теңдіктің екі жағын бірдей санға көбейтуге болады" },
+            { type: "property", title: "Теңсіздік қасиеті 1", content: "Теңсіздіктің екі жағына бірдей сан қосқанда теңсіздік сақталады" },
+            { type: "property", title: "Теңсіздік қасиеті 2", content: "Теңсіздіктің екі жағын оң санға көбейткенде теңсіздік сақталады" },
+            { type: "property", title: "Теңсіздік қасиеті 3", content: "Теңсіздіктің екі жағын теріс санға көбейткенде таңба өзгереді" },
+            { type: "property", title: "Модуль қасиеті", content: "|a| ≥ 0, |a| = |-a|, |a × b| = |a| × |b|" },
+            { type: "formula", title: "Периметр формуласы", content: "P = 2(a + b) — тіктөртбұрыш периметрі" },
+            { type: "formula", title: "Аудан формуласы", content: "S = a × b — тіктөртбұрыш ауданы" },
+            { type: "term", title: "Бүтін сан", content: "..., -2, -1, 0, 1, 2, ... сандарының жиыны" },
+            { type: "term", title: "Натурал сан", content: "1, 2, 3, ... — санау үшін қолданылатын сандар" },
+            { type: "definition", title: "Теңдеуді тексеру", content: "Табылған түбірді теңдеуге қойып, теңдік орындалатынын тексеру" },
+            { type: "property", title: "Ауыстырымдылық", content: "a + b = b + a, a × b = b × a" },
+            { type: "property", title: "Үлестірімділік", content: "a × (b + c) = a × b + a × c" },
+            { type: "property", title: "Терімділік", content: "(a + b) + c = a + (b + c), (a × b) × c = a × (b × c)" },
+        ];
+
+        function renderMaterials(data) {
+            const grid = document.getElementById('materials-grid');
+            grid.innerHTML = '';
+            if (data.length === 0) {
+                grid.innerHTML = '<div class="no-results"><span class="placeholder-icon">🔍</span><h3>Ештеңе табылмады</h3><p>Басқа сөзбен іздеп көріңіз</p></div>';
+                return;
+            }
+            data.forEach((item, i) => {
+                const typeIcons = { formula: '📐', term: '📖', definition: '📝', property: '⚡' };
+                const typeLabels = { formula: 'Формула', term: 'Термин', definition: 'Анықтама', property: 'Қасиет' };
+                const card = document.createElement('div');
+                card.className = 'material-card glass';
+                card.dataset.type = item.type;
+                card.style.animationDelay = (i * 0.05) + 's';
+                card.innerHTML = `
+                    <div class="material-card-header">
+                        <span class="material-type-badge type-${item.type}">${typeIcons[item.type]} ${typeLabels[item.type]}</span>
+                        <h3>${item.title}</h3>
+                    </div>
+                    <div class="material-card-body">
+                        <p>${item.content}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Render all on load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMaterials(materialsData);
+
+            // Search
+            const searchInput = document.getElementById('material-search');
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase().trim();
+                const activeFilter = document.querySelector('.filter-chip.active').dataset.filter;
+                let filtered = materialsData;
+                if (activeFilter !== 'all') {
+                    filtered = filtered.filter(m => m.type === activeFilter);
+                }
+                if (query) {
+                    filtered = filtered.filter(m =>
+                        m.title.toLowerCase().includes(query) || m.content.toLowerCase().includes(query)
+                    );
+                }
+                renderMaterials(filtered);
+            });
+
+            // Filter chips
+            document.getElementById('filter-chips').addEventListener('click', (e) => {
+                const chip = e.target.closest('.filter-chip');
+                if (!chip) return;
+                document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                const filter = chip.dataset.filter;
+                const query = searchInput.value.toLowerCase().trim();
+                let filtered = filter === 'all' ? [...materialsData] : materialsData.filter(m => m.type === filter);
+                if (query) {
+                    filtered = filtered.filter(m =>
+                        m.title.toLowerCase().includes(query) || m.content.toLowerCase().includes(query)
+                    );
+                }
+                renderMaterials(filtered);
+            });
+        });
+    </script>
+</body>
+</html>

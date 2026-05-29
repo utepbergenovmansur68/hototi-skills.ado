@@ -1,0 +1,245 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotori Skills — Теңдеулер мен теңсіздіктер</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-spinner"></div>
+            <h2 class="loader-text">Hotori Skills</h2>
+            <p class="loader-sub">Жүктелуде...</p>
+            <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Floating Math Symbols -->
+    <div class="floating-symbols" id="floating-symbols"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">📐</span>
+                <span class="logo-text">Hotori Skills</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link active">Басты бет</a></li>
+                <li><a href="theory.html" class="nav-link">Теория</a></li>
+                <li><a href="practice.html" class="nav-link">Тәжірибе</a></li>
+                <li><a href="materials.html" class="nav-link">Материалдар</a></li>
+                <li><a href="tests.html" class="nav-link">Тесттер</a></li>
+                <li><a href="progress.html" class="nav-link">Прогресс</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Theme">🌙</button>
+                <button class="sound-toggle" id="sound-toggle" aria-label="Sound">🔊</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🎓 5-сынып математика</div>
+            <h1 class="hero-title">
+                <span class="title-line">Hotori</span>
+                <span class="title-line highlight">Skills</span>
+            </h1>
+            <p class="hero-description">Теңдеулер мен теңсіздіктерді интерактивті түрде үйрен! Теория, практика, тесттер — бәрі бір жерде.</p>
+            <div class="hero-buttons">
+                <a href="theory.html" class="btn btn-primary btn-glow">📚 Оқуды бастау</a>
+                <a href="practice.html" class="btn btn-secondary">✏️ Жаттығулар</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="20">0</span>
+                    <span class="stat-label">Тақырып</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="200">0</span>
+                    <span class="stat-label">Тест сұрағы</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="100">0</span>
+                    <span class="stat-label">Есептер</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-label">Формулалар</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="math-orbit">
+                <div class="orbit-ring ring-1"></div>
+                <div class="orbit-ring ring-2"></div>
+                <div class="orbit-ring ring-3"></div>
+                <div class="orbit-symbol sym-1">x</div>
+                <div class="orbit-symbol sym-2">y</div>
+                <div class="orbit-symbol sym-3">+</div>
+                <div class="orbit-symbol sym-4">=</div>
+                <div class="orbit-symbol sym-5">π</div>
+                <div class="orbit-symbol sym-6">∞</div>
+                <div class="orbit-center">📐</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Не үйренесің? 🚀</h2>
+        <div class="features-grid">
+            <div class="feature-card glass" data-aos="fade-up">
+                <div class="feature-icon">📖</div>
+                <h3>Теория</h3>
+                <p>20 тақырып бойынша толық конспект, мысалдар және визуализациялар</p>
+                <a href="theory.html" class="feature-link">Оқу →</a>
+            </div>
+            <div class="feature-card glass" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">✏️</div>
+                <h3>Практика</h3>
+                <p>Әр тақырыпқа 5+ есеп, автоматты тексеру және нәтиже</p>
+                <a href="practice.html" class="feature-link">Жаттығу →</a>
+            </div>
+            <div class="feature-card glass" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">📝</div>
+                <h3>Тесттер</h3>
+                <p>200 сұрақ, таймер, баға жүйесі және нәтиже талдауы</p>
+                <a href="tests.html" class="feature-link">Тест тапсыру →</a>
+            </div>
+            <div class="feature-card glass" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">📊</div>
+                <h3>Прогресс</h3>
+                <p>XP жүйесі, жетістіктер, daily streak және толық статистика</p>
+                <a href="progress.html" class="feature-link">Қарау →</a>
+            </div>
+            <div class="feature-card glass" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-icon">📋</div>
+                <h3>Материалдар</h3>
+                <p>Барлық формулалар, терминдер, анықтамалар — іздеу жүйесімен</p>
+                <a href="materials.html" class="feature-link">Ашу →</a>
+            </div>
+            <div class="feature-card glass" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-icon">🎮</div>
+                <h3>Интерактивті</h3>
+                <p>Анимациялар, дыбыстар, конфетти эффектілері мен ынталандыру</p>
+                <span class="feature-tag">Жаңа!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Topics Section -->
+    <section class="quick-topics" id="quick-topics">
+        <h2 class="section-title">Тақырыптар 📚</h2>
+        <div class="topics-carousel">
+            <div class="topic-item" onclick="location.href='theory.html#topic-1'">
+                <span class="topic-num">01</span>
+                <span class="topic-name">Айнымалы ұғымы</span>
+            </div>
+            <div class="topic-item" onclick="location.href='theory.html#topic-2'">
+                <span class="topic-num">02</span>
+                <span class="topic-name">Санды өрнектер</span>
+            </div>
+            <div class="topic-item" onclick="location.href='theory.html#topic-3'">
+                <span class="topic-num">03</span>
+                <span class="topic-name">Әріпті өрнектер</span>
+            </div>
+            <div class="topic-item" onclick="location.href='theory.html#topic-4'">
+                <span class="topic-num">04</span>
+                <span class="topic-name">Теңдік және теңсіздік</span>
+            </div>
+            <div class="topic-item" onclick="location.href='theory.html#topic-5'">
+                <span class="topic-num">05</span>
+                <span class="topic-name">Теңдеу ұғымы</span>
+            </div>
+            <div class="topic-item" onclick="location.href='theory.html#topic-6'">
+                <span class="topic-num">06</span>
+                <span class="topic-name">Қарапайым теңдеулер</span>
+            </div>
+            <div class="topic-item" onclick="location.href='theory.html#topic-7'">
+                <span class="topic-num">07</span>
+                <span class="topic-name">Бір амалмен шешу</span>
+            </div>
+            <div class="topic-item" onclick="location.href='theory.html#topic-8'">
+                <span class="topic-num">08</span>
+                <span class="topic-name">Екі амалмен шешу</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Tip -->
+    <section class="daily-tip">
+        <div class="tip-card glass">
+            <div class="tip-icon">💡</div>
+            <div class="tip-content">
+                <h3>Күндізгі кеңес</h3>
+                <p id="daily-tip-text">Теңдеу шешкенде, теңдіктің екі жағына да бірдей амал қолдануды ұмытпа!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">📐 Hotori Skills</span>
+                <p>5-сынып оқушыларына арналған интерактивті білім беру платформасы</p>
+            </div>
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <a href="index.html">Басты бет</a>
+                <a href="theory.html">Теория</a>
+                <a href="practice.html">Тәжірибе</a>
+                <a href="tests.html">Тесттер</a>
+            </div>
+            <div class="footer-links">
+                <h4>Ресурстар</h4>
+                <a href="materials.html">Материалдар</a>
+                <a href="progress.html">Прогресс</a>
+                <a href="theory.html">Формулалар</a>
+            </div>
+            <div class="footer-info">
+                <h4>Байланыс</h4>
+                <p>📧 info@hotoriskills.kz</p>
+                <p>📞 +7 (777) 123-45-67</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Hotori Skills. Барлық құқықтар қорғалған.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- Achievement Popup -->
+    <div id="achievement-popup" class="achievement-popup hidden">
+        <div class="achievement-content">
+            <div class="achievement-icon">🏆</div>
+            <h3 id="achievement-title">Жетістік!</h3>
+            <p id="achievement-desc">Алғашқы қадам!</p>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

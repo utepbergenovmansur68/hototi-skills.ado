@@ -1,0 +1,171 @@
+<!-- progress.html -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогресс — Hotori Skills</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/progress.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="floating-symbols" id="floating-symbols"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">📐</span>
+                <span class="logo-text">Hotori Skills</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Басты бет</a></li>
+                <li><a href="theory.html" class="nav-link">Теория</a></li>
+                <li><a href="practice.html" class="nav-link">Тәжірибе</a></li>
+                <li><a href="materials.html" class="nav-link">Материалдар</a></li>
+                <li><a href="tests.html" class="nav-link">Тесттер</a></li>
+                <li><a href="progress.html" class="nav-link active">Прогресс</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle">🌙</button>
+                <button class="sound-toggle" id="sound-toggle">🔊</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="progress-header">
+        <h1 class="page-title">📊 Прогресс пен статистика</h1>
+        <p class="page-subtitle">Сенің оқу жетістіктерің</p>
+    </section>
+
+    <main class="progress-dashboard">
+        <!-- XP Card -->
+        <div class="xp-card glass">
+            <div class="xp-header">
+                <div class="xp-avatar">🎓</div>
+                <div class="xp-info">
+                    <h2 id="player-level">Деңгей: 1</h2>
+                    <div class="xp-bar-container">
+                        <div class="xp-bar">
+                            <div class="xp-bar-fill" id="xp-bar-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="xp-text"><span id="current-xp">0</span> / <span id="xp-needed">100</span> XP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="xp-stats-row">
+                <div class="xp-stat">
+                    <span class="xp-stat-icon">⭐</span>
+                    <div>
+                        <strong id="total-xp-display">0</strong>
+                        <span>Жалпы XP</span>
+                    </div>
+                </div>
+                <div class="xp-stat">
+                    <span class="xp-stat-icon">🔥</span>
+                    <div>
+                        <strong id="streak-display">0</strong>
+                        <span>Streak</span>
+                    </div>
+                </div>
+                <div class="xp-stat">
+                    <span class="xp-stat-icon">📅</span>
+                    <div>
+                        <strong id="days-active">0</strong>
+                        <span>Күн белсенді</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Circles -->
+        <div class="progress-circles-grid">
+            <div class="progress-circle-card glass">
+                <h3>📖 Теория</h3>
+                <div class="circle-chart">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                        <circle class="circle-fill" id="theory-circle" cx="60" cy="60" r="50"></circle>
+                    </svg>
+                    <span class="circle-percent" id="theory-percent">0%</span>
+                </div>
+                <p id="theory-detail">0 / 20 тақырып</p>
+            </div>
+            <div class="progress-circle-card glass">
+                <h3>✏️ Практика</h3>
+                <div class="circle-chart">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                        <circle class="circle-fill" id="practice-circle" cx="60" cy="60" r="50"></circle>
+                    </svg>
+                    <span class="circle-percent" id="practice-percent">0%</span>
+                </div>
+                <p id="practice-detail">0 дұрыс жауап</p>
+            </div>
+            <div class="progress-circle-card glass">
+                <h3>📝 Тесттер</h3>
+                <div class="circle-chart">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                        <circle class="circle-fill" id="test-circle" cx="60" cy="60" r="50"></circle>
+                    </svg>
+                    <span class="circle-percent" id="test-percent">0%</span>
+                </div>
+                <p id="test-detail">0 тест тапсырылды</p>
+            </div>
+        </div>
+
+        <!-- Topic Breakdown -->
+        <div class="topic-breakdown glass">
+            <h3>📊 Тақырып бойынша прогресс</h3>
+            <div class="topic-bars" id="topic-bars">
+                <!-- JS -->
+            </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="achievements-section glass">
+            <h3>🏆 Жетістіктер</h3>
+            <div class="achievements-grid" id="achievements-grid">
+                <!-- JS -->
+            </div>
+        </div>
+
+        <!-- Activity Log -->
+        <div class="activity-log glass">
+            <h3>📋 Соңғы әрекеттер</h3>
+            <ul class="log-list" id="log-list">
+                <li class="log-empty">Әлі әрекет жоқ. Оқуды баста!</li>
+            </ul>
+        </div>
+
+        <!-- Reset Button -->
+        <div class="reset-section">
+            <button class="btn btn-danger" id="reset-progress-btn">🗑️ Прогресті тазалау</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">📐 Hotori Skills</span>
+                <p>5-сынып оқушыларына арналған интерактивті білім беру платформасы</p>
+            </div>
+            <div class="footer-info">
+                <h4>© 2025 Hotori Skills</h4>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scroll-top">↑</button>
+    <div id="notification-container"></div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
