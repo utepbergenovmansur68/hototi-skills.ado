@@ -1,0 +1,363 @@
+/* css/progress.css */
+/* ============================================
+   HOTORI SKILLS — Progress Page Styles
+   ============================================ */
+
+.progress-header {
+    padding: 120px 2rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.progress-dashboard {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* XP Card */
+.xp-card {
+    padding: 2rem;
+}
+
+.xp-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.xp-avatar {
+    font-size: 3.5rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.xp-info h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.xp-bar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.xp-bar {
+    height: 14px;
+    background: rgba(108, 99, 255, 0.15);
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.xp-bar-fill {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 7px;
+    transition: width 0.8s ease;
+    position: relative;
+}
+
+.xp-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.xp-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.xp-stats-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.xp-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--surface);
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius-sm);
+    flex: 1;
+    min-width: 120px;
+}
+
+.xp-stat-icon {
+    font-size: 1.5rem;
+}
+
+.xp-stat strong {
+    display: block;
+    font-size: 1.3rem;
+    font-family: var(--font-display);
+}
+
+.xp-stat span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Progress Circles */
+.progress-circles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.progress-circle-card {
+    padding: 2rem;
+    text-align: center;
+}
+
+.progress-circle-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.circle-chart {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+}
+
+.circle-chart svg {
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+    stroke: rgba(108, 99, 255, 0.1);
+    stroke-width: 8;
+}
+
+.circle-fill {
+    fill: none;
+    stroke: url(#gradient);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 314;
+    stroke-dashoffset: 314;
+    transition: stroke-dashoffset 1s ease;
+}
+
+.circle-percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.progress-circle-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* Topic Breakdown */
+.topic-breakdown {
+    padding: 2rem;
+}
+
+.topic-breakdown h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.topic-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.topic-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.topic-bar-label {
+    min-width: 180px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.topic-bar-track {
+    flex: 1;
+    height: 10px;
+    background: rgba(108, 99, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.topic-bar-fill {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 5px;
+    transition: width 0.8s ease;
+}
+
+.topic-bar-percent {
+    min-width: 40px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-align: right;
+}
+
+/* Achievements */
+.achievements-section {
+    padding: 2rem;
+}
+
+.achievements-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.achievement-item {
+    text-align: center;
+    padding: 1.2rem 0.8rem;
+    background: var(--surface);
+    border-radius: var(--radius);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.achievement-item.unlocked {
+    border-color: var(--accent-orange);
+    background: rgba(255, 170, 0, 0.05);
+}
+
+.achievement-item.locked {
+    opacity: 0.4;
+    filter: grayscale(1);
+}
+
+.achievement-item .ach-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-item .ach-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Activity Log */
+.activity-log {
+    padding: 2rem;
+}
+
+.activity-log h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.log-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.log-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+}
+
+.log-icon { font-size: 1.2rem; }
+.log-text { flex: 1; }
+.log-time { font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.log-empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+}
+
+/* Reset Section */
+.reset-section {
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .progress-circles-grid {
+        grid-template-columns: 1fr;
+    }
+    .xp-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .xp-stats-row {
+        justify-content: center;
+    }
+    .topic-bar-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    .topic-bar-track {
+        width: 100%;
+    }
+    .topic-bar-percent {
+        text-align: left;
+    }
+}
